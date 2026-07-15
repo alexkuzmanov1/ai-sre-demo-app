@@ -1,5 +1,6 @@
 import { execSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 export interface DeployEntry {
@@ -7,7 +8,10 @@ export interface DeployEntry {
   timestamp: string;
 }
 
-const DEPLOYS_FILE = join(process.cwd(), 'deploys.json');
+// On Vercel the deployment bundle is read-only; /tmp is the only writable path.
+const DEPLOYS_FILE = process.env.VERCEL
+  ? join(tmpdir(), 'deploys.json')
+  : join(process.cwd(), 'deploys.json');
 
 function currentSha(): string {
   try {
