@@ -1,0 +1,41 @@
+{
+  "name": "mini-shop",
+  "version": "1.0.0",
+  "description": "Mini Shop — patient app for an AI incident responder demo",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "seed": "tsx src/seed.ts",
+    "traffic": "tsx scripts/traffic.ts",
+    "deploy:log": "tsx scripts/log-deploy.ts",
+    "demo:break": "bash scripts/demo.sh break",
+    "demo:fix": "bash scripts/demo.sh fix",
+    "demo:revert": "bash scripts/demo.sh revert",
+    "demo:status": "bash scripts/demo.sh status",
+    "lint": "eslint \"{src,scripts}/**/*.ts\""
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.15",
+    "@nestjs/config": "^3.3.0",
+    "@nestjs/core": "^10.4.15",
+    "@nestjs/mongoose": "^10.1.0",
+    "@nestjs/platform-express": "^10.4.15",
+    "ioredis": "^5.4.2",
+    "mongoose": "^8.9.5",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.9",
+    "@nestjs/schematics": "^10.2.3",
+    "@types/node": "^22.10.5",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^8.57.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
