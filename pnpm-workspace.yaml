@@ -1,0 +1,9 @@
+packages:
+  - '.'
+
+verifyDepsBeforeRun: false
+minimumReleaseAgeExclude:
+  - electron-to-chromium
+allowBuilds:
+  '@nestjs/core': true
+  esbuild: true
