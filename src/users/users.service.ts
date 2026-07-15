@@ -59,4 +59,9 @@ export class UsersService {
       totalSpentCents,
     };
   }
+
+  /** Return every user as stored — no summaries, no derived fields. */
+  list(): Promise<User[]> {
+    return this.userModel.find().lean<User[]>().exec();
+  }
 }
