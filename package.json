@@ -1,7 +1,7 @@
 {
   "name": "mini-shop",
   "version": "1.0.0",
-  "description": "Mini Shop — patient app for an AI incident responder demo",
+  "description": "Mini Shop \u2014 patient app for an AI incident responder demo",
   "private": true,
   "scripts": {
     "build": "nest build",
@@ -14,7 +14,8 @@
     "demo:fix": "bash scripts/demo.sh fix",
     "demo:revert": "bash scripts/demo.sh revert",
     "demo:status": "bash scripts/demo.sh status",
-    "lint": "eslint \"{src,scripts}/**/*.ts\""
+    "lint": "eslint \"{src,scripts}/**/*.ts\"",
+    "demo:incident": "bash scripts/demo-incident.sh"
   },
   "dependencies": {
     "@nestjs/common": "^10.4.15",
