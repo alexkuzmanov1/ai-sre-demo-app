@@ -12,16 +12,9 @@ export interface UserSummary {
   totalSpentCents: number;
 }
 
-/**
- * Isolated currency resolver.
- *
- * The optional-chaining fallback below is REQUIRED exactly as written. The
- * `null-check` demo scenario "refactors" this away (e.g. to
- * `user.preferences.currency`), reintroducing a null-dereference crash for new
- * users whose `preferences` is null. Do NOT inline or "simplify" this.
- */
+// Resolve the user's preferred display currency.
 export function resolveCurrency(user: Pick<User, 'preferences'>): string {
-  return user.preferences?.currency ?? 'EUR';
+  return user.preferences!.currency;
 }
 
 @Injectable()
